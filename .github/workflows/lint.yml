@@ -1,0 +1,16 @@
+name: Auto linter
+
+on: 
+  push: 
+    paths: "*.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v4
+
+# this step install Lintin tool
+      - name: Install Linter
+        run: pip install ruff
